@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Pixiv Hide Works",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "pixiv-hide-works@fekoneko.github.io",
+      "strict_min_version": "60.0"
+    }
+  },
+  "description": "Conceals works that you don't like on Pixiv.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": ["*://*.pixiv.net/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.pixiv.net/*"],
+      "js": ["src/index.js"],
+      "css": ["src/style.css"]
+    }
+  ],
+  "web_accessible_resources": ["src/style.css"]
+}
