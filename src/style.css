@@ -1,0 +1,23 @@
+.phw-hidden {
+  overflow: hidden;
+
+  img {
+    filter: blur(12px) grayscale(0.25) brightness(0.75);
+    transform: scale(1.1);
+  }
+
+  &::after {
+    content: attr(data-phw-hidden-reason);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff99;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+}
