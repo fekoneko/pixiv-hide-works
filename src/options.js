@@ -16,8 +16,8 @@ const loadDefaultOptions = async () => {
     highlightedTags: options?.highlightedTags ?? [],
   };
 
-  hiddenTagsInput.value = options.hiddenTags.join('\n');
-  highlightedTagsInput.value = options.highlightedTags.join('\n');
+  hiddenTagsInput.value = options.hiddenTags.join(', ');
+  highlightedTagsInput.value = options.highlightedTags.join(', ');
   hiddenTagsInput.removeAttribute('disabled');
   highlightedTagsInput.removeAttribute('disabled');
   submitButton.removeAttribute('disabled');
@@ -27,7 +27,7 @@ loadDefaultOptions();
 
 const parseToArray = (value) =>
   value
-    ?.split('\n')
+    ?.split(/[\n,、 　]/g)
     .filter(Boolean)
     .map((tag) => tag.trim()) ?? [];
 
@@ -39,6 +39,9 @@ const handleSubmit = (event) => {
     highlightedTags: parseToArray(highlightedTagsInput.value),
   };
   browser.storage.sync.set({ options });
+
+  hiddenTagsInput.value = options.hiddenTags.join(', ');
+  highlightedTagsInput.value = options.highlightedTags.join(', ');
 };
 
 form.addEventListener('submit', handleSubmit);
