@@ -20,26 +20,39 @@ executeScript(`
   );
 
   const hiddenTags = ['AI作成', 'NovelAI', 'milf', 'ミルフ', 'おっぱい'];
+  const highlightedTags = ['女の子'];
 
   const matchHiddenTag = (workTags) => workTags.find((tag) => hiddenTags.includes(tag))
+  const matchHighlightedTag = (workTags) => workTags.find((tag) => highlightedTags.includes(tag))
 
   const markHidden = (imageWrapper, reason) => {
-    imageWrapper.classList.remove('phw-unknown');
     imageWrapper.classList.remove('phw-shown');
+    imageWrapper.classList.remove('phw-highlighted');
+    imageWrapper.classList.remove('phw-unknown');
     imageWrapper.classList.add('phw-hidden');
     imageWrapper.setAttribute('data-phw-hidden-reason', reason);
     };
 
   const markShown = (imageWrapper) => {
-    imageWrapper.classList.remove('phw-unknown');
     imageWrapper.classList.remove('phw-hidden');
+    imageWrapper.classList.remove('phw-highlighted');
+    imageWrapper.classList.remove('phw-unknown');
     imageWrapper.classList.add('phw-shown');
+    imageWrapper.removeAttribute('data-phw-hidden-reason');
+  };
+
+  const markHighlighted = (imageWrapper) => {
+    imageWrapper.classList.remove('phw-hidden');
+    imageWrapper.classList.remove('phw-shown');
+    imageWrapper.classList.remove('phw-unknown');
+    imageWrapper.classList.add('phw-highlighted');
     imageWrapper.removeAttribute('data-phw-hidden-reason');
   };
 
   const markUnknown = (imageWrapper) => {
     imageWrapper.classList.remove('phw-hidden');
     imageWrapper.classList.remove('phw-shown');
+    imageWrapper.classList.remove('phw-highlighted');
     imageWrapper.classList.add('phw-unknown');
     imageWrapper.removeAttribute('data-phw-hidden-reason');
   };
@@ -60,8 +73,18 @@ executeScript(`
       }
 
       const hiddenTag = matchHiddenTag(workTags);
-      if (hiddenTag) markHidden(imageWrapper, hiddenTag);
-      else markShown(imageWrapper);
+      if (hiddenTag) {
+        markHidden(imageWrapper, hiddenTag);
+        return;
+      }
+
+      const highlightedTag = matchHighlightedTag(workTags);
+      if (highlightedTag) {
+        markHighlighted(imageWrapper);
+        return;
+      }
+
+      markShown(imageWrapper);
     });
   };
 
