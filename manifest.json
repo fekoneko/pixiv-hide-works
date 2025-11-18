@@ -17,7 +17,12 @@
   "content_scripts": [
     {
       "matches": ["*://*.pixiv.net/*"],
-      "js": ["src/index.js"],
+      "js": ["src/start.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.pixiv.net/*"],
+      "js": ["src/loaded.js"],
       "css": ["src/style.css"]
     }
   ],

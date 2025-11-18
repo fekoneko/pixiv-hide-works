@@ -2,6 +2,10 @@
 
 Firefox add-on that conceals works that you don't like on Pixiv.
 
-- You can finally avoid AI bloat on _all_ pages
-- You can hide works based on tags
-- If the author is not honest about their tags - you can hide all their works as well
+The extension only works with artworks and manga - not with novels.
+
+The extension doesn't make any additional requests and uses all the janky logic
+to determine work tags. I couldn't account for everything, but it's fine for me.
+
+If the extension couldn't determine if a work should be hidden, a little question
+mark will appear in the bottom left corner of the illustration.

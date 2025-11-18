@@ -21,3 +21,24 @@
     font-weight: 700;
   }
 }
+
+.phw-unknown {
+  &::after {
+    content: '?';
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    padding-bottom: 1px;
+    color: #ffffff;
+    background-color: #00000055;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 50%;
+  }
+}
