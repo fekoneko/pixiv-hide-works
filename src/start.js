@@ -7,10 +7,11 @@ const executeScript = (code) => {
 
 executeScript(`
   const urlsOfResponsesWithTags = [
-    /https?:\\/\\/www.pixiv.net\\/ajax\\/illust\\/discovery/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/illusts\\/bookmarks/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/profile\\/top/,
+    /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/profile\\/illusts/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/works\\/latest/,
+    /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/works\\/all/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/street\\/v2\\/main/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/street\\/for_you/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/street\\/latest/,
