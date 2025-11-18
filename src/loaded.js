@@ -31,7 +31,7 @@ executeScript(`
     imageWrapper.classList.remove('phw-unknown');
     imageWrapper.classList.add('phw-hidden');
     imageWrapper.setAttribute('data-phw-hidden-reason', reason);
-    };
+  };
 
   const markShown = (imageWrapper) => {
     imageWrapper.classList.remove('phw-hidden');
