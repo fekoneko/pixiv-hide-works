@@ -17,7 +17,7 @@ executeScript(`
     /https?:\\/\\/www.pixiv.net\\/ajax\\/follow_latest\\/illust/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/top\\/manga/,
     /https?:\\/\\/www.pixiv.net\\/ajax\\/top\\/illust/,
-    /https?:\\/\\/www.pixiv.net\\/ajax\\/illust,
+    /https?:\\/\\/www.pixiv.net\\/ajax\\/illust/,
   ];
   window.tagsLookup = new Map();
   const originalFetch = window.fetch;
