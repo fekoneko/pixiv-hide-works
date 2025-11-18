@@ -5,6 +5,8 @@ const executeScript = (code) => {
   script.remove();
 };
 
+// TODO: make sure not to grab novels by accident
+
 executeScript(`
   const urlsOfResponsesWithTags = [
     /https?:\\/\\/www.pixiv.net\\/ajax\\/user\\/[0-9]*\\/illusts\\/bookmarks/,

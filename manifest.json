@@ -4,7 +4,7 @@
   "version": "1.0",
   "applications": {
     "gecko": {
-      "id": "pixiv-hide-works@fekoneko.github.io",
+      "id": "pixiv-hide-works@fekoneko.com",
       "strict_min_version": "60.0"
     }
   },
@@ -13,7 +13,7 @@
     "48": "icons/icon-48.png",
     "96": "icons/icon-96.png"
   },
-  "permissions": ["*://*.pixiv.net/*"],
+  "permissions": ["storage", "*://*.pixiv.net/*"],
   "content_scripts": [
     {
       "matches": ["*://*.pixiv.net/*"],
@@ -26,5 +26,8 @@
       "css": ["src/style.css"]
     }
   ],
+  "options_ui": {
+    "page": "src/options.html"
+  },
   "web_accessible_resources": ["src/style.css"]
 }
