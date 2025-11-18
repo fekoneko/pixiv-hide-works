@@ -27,7 +27,8 @@
     }
   ],
   "options_ui": {
-    "page": "src/options.html"
+    "page": "src/options.html",
+    "browser_style": false
   },
   "web_accessible_resources": ["src/style.css"]
 }
